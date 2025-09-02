@@ -49,9 +49,6 @@ Pilha* inverterPilha(char palavra[]) {
 }
 
 
-//Pilha* peek(Pilha* topo, char valor) {}
-
-
 int main() {
 
     Pilha* pilha = NULL;
