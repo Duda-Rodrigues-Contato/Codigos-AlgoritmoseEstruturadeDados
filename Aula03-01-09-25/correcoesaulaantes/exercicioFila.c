@@ -24,16 +24,16 @@ Fila* enqueue(Fila* fim, char valor) {
 }
 
 
-Fila* dequeue(Fila* inicio) {
+Fila* dequeue(Fila* inicial) {
     
-    if (inicio == NULL) 
+    if (inicial == NULL) 
         return NULL;
 
-    Fila* temp = inicio;
+    Fila* temp = inicial;
     
-    inicio = inicio -> inicio;
+    inicial = inicial -> inicio;
     
-    return inicio;
+    return inicial;
 
 }
 
