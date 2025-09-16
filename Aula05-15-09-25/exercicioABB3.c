@@ -47,6 +47,9 @@ No* buscar(No* raiz, int valor) {
         return raiz;
     if (valor < raiz->valor)
         return buscar(raiz->esquerda, valor);
+        if (raiz == valor) {
+            printf("Valor %d encontrado na árvore.\n", valor);
+        }
     return buscar(raiz->direita, valor);
 }
 
@@ -63,7 +66,7 @@ int main() {
     raiz = inserir(raiz, 60);
     raiz = inserir(raiz, 80);
 
-    buscar(raiz, 60);
+    buscar(raiz, 60);   
     buscar(raiz, 25);
     buscar(raiz, 40);
 
