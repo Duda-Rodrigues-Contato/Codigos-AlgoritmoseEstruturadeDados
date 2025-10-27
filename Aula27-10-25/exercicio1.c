@@ -2,14 +2,19 @@
 #include <stdio.h>
 
 int buscaSequencial (int vetor[], int tamanho, int valor) {
+    
+    int cont = 0;
 
     for (int i = 0; i < tamanho; i++) {
 
         if (vetor[i] == valor)
-            return i;
+            cont++;
     }
 
-    return -1;
+    if (cont == 0) 
+        return -1;
+    else 
+        return cont;
 
 }
 
@@ -18,13 +23,15 @@ int main() {
 
     int vetor[] = {7, 3, 5, 7, 9, 2, 7, 1, 4, 6};
     int valor = 7;
-    int posBusca = buscaSequencial(vetor, 10, valor);
+    int tamanho = sizeof(vetor) / sizeof(vetor[0]);
+ 
+    int resultado= buscaSequencial(vetor, tamanho, valor);
 
-    if (posBusca != -1)
-        printf("Valor: %d encontrado na posicao: %d\n", valor, posBusca);
+    if (resultado != -1)
+        printf("Valor: %d encontrado na posicao: %d\n", valor, resultado);
     else
         printf("Valor nao encontrado\n");
-        
+
     return 0;
 
 }
