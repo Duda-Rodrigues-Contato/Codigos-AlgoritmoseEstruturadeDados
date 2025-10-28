@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 typedef struct No {
-
-    int valor;
     struct No* esquerda;
+    int valor;
     struct No* direita;
 
 } No;
