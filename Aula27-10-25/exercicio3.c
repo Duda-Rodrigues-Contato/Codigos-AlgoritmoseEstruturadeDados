@@ -1,10 +1,17 @@
 // Busca Binária:
 /*
-    Uma livraria digital armazena livros classificados por tipo (ordem alfabetica).
 
-    Modificar de títulos com nome completo, para    
-    retornar todos os títulos cujos os nomes começam 
-    com o prefixo indicado pelo cliente.
+    Uma livraria digital armazena livros classificados por título (ordem alfabética). 
+    O sistema atual usa busca binária para localizar um título exato, mas agora o 
+    cliente quer buscar por prefixos, ou seja, ao digitar "Har", o sistema deve retornar 
+    todos os livros cujos títulos começam com o prefixo "Har" (ex.: "Harry Potter", "Harpa Cristã", etc.).
+    
+    Modifique a busca binária para retornar uma lista com todos os livros cujos títulos iniciam com determinado prefixo informado.
+
+    Exemplos:
+    - Lista ordenada de títulos: ["Aprendendo C", "Banco de Dados", "C Completo", 
+    "Harpa Crista", "Harry Potter", "Java Facil", "Python Basico"]
+    - Prefixo buscado: "Har"
 
 */
 
