@@ -56,7 +56,7 @@ void acharLivros(char *vetor[], int tamanho, char *prefixo) {
 
     if (indiceInicio == -1) {
 
-        printf("Nenhum livro enontrado com esse prefixo.\n");
+        printf("Nenhum livro encontrado com esse prefixo.\n");
         return;
 
     }
@@ -83,10 +83,14 @@ void acharLivros(char *vetor[], int tamanho, char *prefixo) {
 int main() {
 
     char *vetor[] = {"Aprendendo C", "Banco de Dados", "C Completo", "Harpa Cristã", "Harry Potter", "Java Facil", "Python Basico"};
-    char prefixo[] = "Har";
+    char prefixo1[] = "Har";
+    char prefixo2[] = "B";
+    char prefixo3[] = "Do";
     int tamanho = sizeof(vetor) / sizeof(vetor[0]);
 
-    acharLivros(vetor, tamanho, prefixo);
+    acharLivros(vetor, tamanho, prefixo1);
+    acharLivros(vetor, tamanho, prefixo2);
+    acharLivros(vetor, tamanho, prefixo3);
 
     return 0;
 
