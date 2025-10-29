@@ -16,21 +16,64 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int acharLivros(char vetor[], int tamanho, char valor) {
+int buscanoMeio(char *vetor[], int tamanho, char *prefixo) {
 
-    int inicio = 0, fim = tamanho - 1, meio;
+    int inicio = 0, fim = tamanho - 1, primeiroMeio = -1;
 
     while (inicio <= fim) {
 
-        meio = (inicio + fim) / 2;
+        int meio = inicio + (fim - inicio) / 2;
+
+        if (strncmp(vetor[meio], prefixo, strlen(prefixo)) == 0) {
+            
+            primeiroMeio = meio;
+            fim = meio - 1; 
+
+        } else if (strcmp(vetor[meio], prefixo) < 0) {
+
+            inicio = meio + 1; 
         
-        if (vetor[meio] == valor) {
-            //return meio; // valor encontrado
-        } else if (vetor[meio] < valor) {
-            inicio = meio + 1; // busca na metade superior
         } else {
-            fim = meio - 1; // busca na metade inferior
+
+            fim = meio - 1; 
+
+        }
+
+    }
+
+    return primeiroMeio;
+
+}
+
+
+void acharLivros(char *vetor[], int tamanho, char *prefixo) {
+
+    int indiceInicio = buscanoMeio(vetor, tamanho, prefixo);
+    int i = indiceInicio;
+
+    if (indiceInicio == -1) {
+
+        printf("Nenhum livro enontrado com esse prefixo.\n");
+        return;
+
+    }
+
+    printf("Livros encontrados: \n");
+
+    while (i < tamanho) {
+
+        if (strncmp(vetor[i], prefixo, strlen(prefixo)) == 0) {
+
+            printf("%s\n", vetor[i]);
+            i++;
+        
+        } else {
+
+            break;
+        
         }
 
     }
@@ -39,9 +82,11 @@ int acharLivros(char vetor[], int tamanho, char valor) {
 
 int main() {
 
-    char vetor[] = {"Aprendendo C", "Banco de Dados", "C Completo", "Harpa Cristã", "Harry Potter", "Java Facil", "Python Basico"};
+    char *vetor[] = {"Aprendendo C", "Banco de Dados", "C Completo", "Harpa Cristã", "Harry Potter", "Java Facil", "Python Basico"};
     char prefixo[] = "Har";
     int tamanho = sizeof(vetor) / sizeof(vetor[0]);
+
+    acharLivros(vetor, tamanho, prefixo);
 
     return 0;
 
