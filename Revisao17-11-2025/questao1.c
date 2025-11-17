@@ -4,7 +4,7 @@
 
 int budcaSequencialRecursiva(int vetor[], int tamanho, int valor) {
 
-    if (tamanho <= 0) {
+    if (tamanho < 0) {
 
         return -1;
 
